@@ -11,8 +11,7 @@ app.use(cors());
 app.use(express.json({ urlencoded: true }));
 
 app.use(express.static('dist/library-frontend'));
-app.get('/*', (req, res)=> {
-  res.sendFile(path.join(__dirname + '/dist//library-frontend/index.html'))})
+
 
 
 // Authentication&Authorization Part
@@ -117,7 +116,8 @@ bookData.findByIdAndDelete(req.params.id)
   })
 })
 
-
+app.get('/*', (req, res)=> {
+  res.sendFile(path.join(__dirname + '/dist//library-frontend/index.html'))})
 
 app.listen(PORT, () => {
   console.log(`Running on ${PORT}`);
