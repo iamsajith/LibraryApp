@@ -59,6 +59,7 @@ app.post("/api/login", (req, res) => {
 
 
 app.get("/api/book", (req, res) => {
+  console.log("Entered inside book database")
   bookData.find().then((data) => {
     console.log("All Books",data)
     res.send(data);
